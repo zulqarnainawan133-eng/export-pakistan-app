@@ -13,7 +13,6 @@ def get_psw_client(request: Request):
 
 @router.get("/track/{gd_number}")
 async def track_shipment(gd_number: str, psw_client: PSWClient = Depends(get_psw_client)):
-    # Simple validation: GD number should follow a specific format (e.g., GD-YYYY-NNNN)
     if not re.match(r"^GD-\d{4}-\d{4}$", gd_number):
         raise HTTPException(status_code=400, detail="Invalid GD number format. Expected format: GD-YYYY-NNNN")
 
