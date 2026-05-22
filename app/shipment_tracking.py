@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Depends, Request
 import re
 import httpx
-from .psw_client import PSWClient
+from app.psw_client import PSWClient
 
 router = APIRouter()
 

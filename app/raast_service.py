@@ -1,11 +1,10 @@
-from .database import db
+from app.database import db
 from typing import Dict, Any
 
 class RaastService:
     async def call_raast_api(self, farmer_id: str, amount: float) -> bool:
         """
-        Mock RAAST API call. In a real application, this would use httpx
-        to call the actual RAAST gateway.
+        Mock RAAST API call.
         """
         print(f"RAAST: Releasing {amount} to farmer {farmer_id}")
         return True
